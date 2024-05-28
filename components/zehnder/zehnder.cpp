@@ -338,7 +338,7 @@ void ZehnderRF::discoveryStart(const uint8_t deviceId) {
 
   this->startTransmit(this->_txFrame, FAN_TX_RETRIES, [this]() {
     ESP_LOGW(TAG, "Start discovery timeout");
-    this->state_ = StateStartDiscovery;
+    this->state_ = StateStartPolling;
   });
 
   // Update state
