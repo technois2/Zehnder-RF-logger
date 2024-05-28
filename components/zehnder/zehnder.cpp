@@ -207,7 +207,7 @@ void ZehnderRF::rfHandleReceived(const uint8_t *const pData, const uint8_t dataL
   RfFrame *const pTxFrame = (RfFrame *) this->_txFrame;  // frame helper
   nrf905::Config rfConfig;
 
-  ESP_LOD(TAG, "Discovery: Received unknown command 0x%02X from ID 0x%02X", pResponse->command,
+  ESP_LOGD(TAG, "Discovery: Received unknown command 0x%02X from ID 0x%02X", pResponse->command,
             pResponse->tx_id);
   ESP_LOGD(TAG, "Debug: rx_type 0x%02X, rx_id 0x%02X, tx_type 0x%02X, tx_id 0x%02X", pResponse->rx_type, pResponse->rx_id, pResponse->tx_type, pResponse->tx_id);
 }
